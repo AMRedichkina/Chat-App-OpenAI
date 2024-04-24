@@ -1,0 +1,84 @@
+.chat-container-main {
+  position: relative;
+  max-width: 51rem;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: #E0E1E2;
+  box-shadow: 0 0 15px rgba(111, 111, 111, 0.5);
+  overflow: hidden;
+  background-color: #FFDEE9;
+  background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+}
+
+.messages-list {
+position: absolute;
+top: 2.5rem;
+display: flex;
+flex-direction: column;
+width: 100%; 
+padding: 1.6rem;
+overflow-y: auto;
+max-height: 90%;
+}
+
+.chart-container {
+  width: 95%;
+  height: 400px; 
+}
+
+.message {
+display: flex;
+margin-bottom: 1rem;
+}
+
+.user, .bot {
+flex-direction: row;
+}
+
+.user {
+flex-direction: row-reverse;
+}
+
+.bot {
+justify-content: flex-start;
+}
+
+.avatar-placeholder {
+width: 40px;
+height: 40px;
+border-radius: 50%;
+background-size: cover;
+background-position: center;
+box-shadow: 0 4px 6px rgba(111, 111, 111, 0.5);
+margin: 0 1rem;
+}
+
+.comment-text {
+max-width: 80%;
+background-color: white;
+border-radius: 15px;
+padding: 8px 12px;
+margin-top: 1.5rem;
+box-shadow: 0 4px 6px rgba(111, 111, 111, 0.5);
+}
+
+@media (max-width: 425px) {
+.chat-container-main{
+  width: 100%;
+  max-width: none;
+}
+.message {
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar-placeholder {
+  margin-right: 0;
+  margin-bottom: 0.5rem;
+}
+
+.comment-text {
+  width: 100%;
+  max-width: 100%;
+}
+}
