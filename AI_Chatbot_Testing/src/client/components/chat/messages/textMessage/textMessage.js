@@ -1,13 +1,13 @@
 import React from 'react';
-import { Comment, Label, Icon } from 'semantic-ui-react';
+import { Comment, Icon } from 'semantic-ui-react';
+import { useDispatch } from 'react-redux';
+
+import './textMessage.css';
 import botAvatar from '../../../../public/avatar_1.png';
 import botUser from '../../../../public/avatar_2.png';
-import { useDispatch } from 'react-redux';
 import { removeMessage } from '../../../../store/slices/messageSlice';
-import './textMessage.css';
 
 const TextMessage = React.memo(({ msg }) => {
-  console.log(`render text msg`)
   const dispatch = useDispatch();
     
   const handleDelete = () => {

@@ -40,7 +40,6 @@ const fetchTextOpenAI = async function (ws, messageObj) {
 wss.on('connection', function connection(ws) {
     console.log('A client connected');
     ws.on('message', function incoming(data) {
-        console.log('received: %s', data);
         let messageObj;
         try {
             messageObj = JSON.parse(data);

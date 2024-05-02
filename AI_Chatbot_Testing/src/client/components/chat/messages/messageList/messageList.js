@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+
 import ChartMessage from '../chartMessage/chartMessage';
 import TextMessage from '../textMessage/textMessage';
 
@@ -18,10 +19,10 @@ const MessageList = React.memo(() => {
 
   return (
     <div className="messages-list">
-      {messages.map((msg) => {
+      {messages.map((msg, index) => {
         const key = `${msg.id}-${msg.timestamp}`;
         return (
-          <div key={key} className={`message ${msg.from === 'You' ? 'user' : 'bot'}`}>
+          <div key={key} className={`message ${msg.from === 'You' ? 'user' : 'bot'}`} data-testid={`message-${index}`}>
             {msg.type === 'chart-bot' ? (
               <ChartMessage msg={msg} />
             ) : (

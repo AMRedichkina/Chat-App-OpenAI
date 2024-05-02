@@ -1,7 +1,9 @@
+const path = require('path');
+
 module.exports = {
     moduleNameMapper: {
       '\\.(css|less|scss|sass)$': '<rootDir>/__mocks__/styleMock.js',
-      '\\.(jpg|jpeg|png|gif|webp|svg)$': '<rootDir>/__mocks__/fileMock.js'
+      '\\.(jpg|jpeg|png|gif|webp|svg)$': '<rootDir>/__mocks__/fileMock.js',
     },
     testEnvironment: 'jest-environment-jsdom',
     transform: {
@@ -10,6 +12,6 @@ module.exports = {
     transformIgnorePatterns: [
       '/node_modules/',
     ],
-    setupFilesAfterEnv: ['@testing-library/jest-dom']
+    setupFilesAfterEnv: ['@testing-library/jest-dom', './jest.setup.js']
   };
   

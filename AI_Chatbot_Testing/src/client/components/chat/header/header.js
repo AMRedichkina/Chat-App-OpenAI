@@ -1,23 +1,24 @@
 import React, { useState } from 'react';
-import './header.css';
 import { Container, Icon, Dropdown } from 'semantic-ui-react';
 import { useDispatch } from 'react-redux';
+
+import './header.css';
 import { clearMessages } from '../../../store/slices/messageSlice';
 
 const Header = React.memo(({ onHashtagAdded }) => {
-    console.log("render header");
     const dispatch = useDispatch();
+
+    const handleClearMessages = () => {
+        dispatch(clearMessages());
+    };
     const [dropdownKey, setDropdownKey] = useState(0);
     const hashtags = [
         { key: 'diagram', text: '#diagram', value: '#diagram' },
     ];
 
     const addHashtag = (e, { value }) => {
-        onHashtagAdded((inputValue) => {
-            const newValue = value.trim() + ' ' + inputValue;
-            dispatch(setInputValue(newValue));
-            setDropdownKey(prevKey => prevKey + 1);
-        });
+        onHashtagAdded(value);
+        setDropdownKey(prevKey => prevKey + 1);
     };
     
     return (
@@ -28,11 +29,11 @@ const Header = React.memo(({ onHashtagAdded }) => {
                     className='icon dropdown'
                     options={hashtags}
                     onChange={addHashtag}
-                    trigger={<Icon name='hashtag' className='hashtag-icon'/>}
+                    trigger={<Icon name='hashtag' className='hashtag-icon' data-testid="hashtag-icon"/>}
                     pointing='top right'
                     icon={null}
                 />
-                <Icon className='delete-icon' name='delete' link onClick={() => dispatch(clearMessages())} />
+                <Icon className='delete-icon' data-testid="delete-icon" name='delete' link onClick={handleClearMessages} />
             </div>
         </Container>
     );

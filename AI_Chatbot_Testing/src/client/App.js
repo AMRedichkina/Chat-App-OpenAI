@@ -1,13 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Chat from './components/Chat';
+import { WebSocketProvider } from './context/WebSocketContext';
 
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/chat" element={<Chat />} />
-      </Routes>
+      <WebSocketProvider>
+        <Routes>
+          <Route path="/chat" element={<Chat />} />
+        </Routes>
+      </WebSocketProvider>
     </Router>
   );
 }

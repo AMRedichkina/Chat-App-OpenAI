@@ -1,6 +1,8 @@
 import React, { useCallback } from 'react';
 import { Comment, Icon } from 'semantic-ui-react';
 import { Bar } from 'react-chartjs-2';
+import html2canvas from 'html2canvas';
+
 import barChartOptions from './barChatOptions';
 import botAvatar from '../../../../public/avatar_1.png';
 
@@ -15,6 +17,10 @@ const ChartMessage = React.memo(({msg}) => {
       link.click();
     });
   });
+
+  if (process.env.NODE_ENV === 'test') {
+    return <div>Chart not rendered in test mode</div>;
+  }
 
   return <>
       <Comment.Avatar
