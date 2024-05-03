@@ -1,4 +1,4 @@
-.chat-container-input {
+.chat__container-input {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -13,7 +13,7 @@
     z-index: 1;
 }
 
-.input-field-container {
+.input__field-container {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -22,7 +22,7 @@
     z-index: 2;
 }
 
-.input-field {
+.input__field {
     width: 90%;
     height: 50%;
     margin: 0.8rem auto;
@@ -31,7 +31,7 @@
 
 
 @media (max-width: 425px) {
-.chat-container-input {
+.chat__container-input {
   width: 100%;
   max-width: none;
 }}

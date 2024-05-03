@@ -1,55 +1,54 @@
-.user-message {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-}
-
-.bot-message {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.avatar-image img{
-    width: 40px;
-    height: 40px;
-    object-fit: cover;
-    margin: 0 10px 0 10px;
-  }
-  
-.message-bubble {
-  position: relative;
-  background-color: white;
-  border-radius: 18px;
-  padding: 10px 20px; /* Паддинги вокруг текста и крестика */
-  position: relative; /* Для позиционирования крестика */
-  display: flex;
-  align-items: center; /* Центрирование содержимого по вертикали */
-  /* max-width: calc(100% - 85px); Максимальная ширина, с учетом аватара */
-  min-width: 100px;  /* Минимальная ширина сообщения */
-  min-height: 60px;
-}
-
-.delete-icon-text {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  margin-left: auto; /* Выравнивание крестика по правому краю */
-  cursor: pointer;
-  color: gray; /* Цвет иконки */
-}
-
-.delete-icon:hover {
-  color: black; /* Красный цвет при наведении для большей видимости */
-}
-
 .comment {
   display: flex;
-  align-items: flex-start; /* Выравнивание по верхнему краю */
-  margin-bottom: 8px; /* Отступ между сообщениями */
+  align-items: flex-start;
+  margin-bottom: 8px;
 }
 
 .comment .content {
-  flex-grow: 1; /* Занимает все доступное пространство */
-  margin-left: 10px; /* Отступ от аватара */
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+.chat__user-message {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.chat__bot-message {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.message__avatar-image img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  margin: 0 10px 0 10px;
+}
+
+.message__bubble {
+  position: relative;
+  background-color: white;
+  border-radius: 18px;
+  padding: 10px 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 100px;
+  min-height: 60px;
+}
+
+.message__delete-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  margin-left: auto;
+  cursor: pointer;
+  color: gray;
+}
+
+.message__delete-icon:hover {
+  color: black;
 }
